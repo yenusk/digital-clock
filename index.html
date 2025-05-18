@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced JavaScript Clock</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="controls">
+      <button id="theme-toggle" title="Toggle theme (Space)">🌓</button>
+      <button id="mode-toggle" title="Switch modes">Clock</button>
+      <button id="format-toggle" title="Toggle format (F)">12h</button>
+    </div>
+    
+    <div class="display">
+      <div id="greeting"></div>
+      <div id="time"></div>
+      <div id="date"></div>
+      
+      <!-- Stopwatch elements -->
+      <div id="stopwatch" class="hidden">
+        <div id="stopwatch-display">00:00:00</div>
+        <div class="stopwatch-controls">
+          <button id="start-stopwatch">Start</button>
+          <button id="lap-stopwatch">Lap</button>
+          <button id="reset-stopwatch">Reset</button>
+        </div>
+        <div id="laps-container"></div>
+      </div>
+      
+      <!-- Timer elements -->
+      <div id="timer" class="hidden">
+        <input type="number" id="minutes-input" min="1" max="60" value="5" placeholder="Min">
+        <input type="number" id="seconds-input" min="0" max="59" value="0" placeholder="Sec">
+        <div class="timer-controls">
+          <button id="start-timer">Start</button>
+          <button id="reset-timer">Reset</button>
+        </div>
+        <div id="timer-display">05:00</div>
+      </div>
+      
+      <!-- Alarm elements -->
+      <div id="alarm" class="hidden">
+        <input type="time" id="alarm-time">
+        <button id="set-alarm">Set Alarm</button>
+        <div id="alarm-status">No alarm set</div>
+        <div id="active-alarms"></div>
+      </div>
+    </div>
+    
+    <div class="theme-picker hidden">
+      <div class="theme-option" data-theme="default"></div>
+      <div class="theme-option" data-theme="dark"></div>
+      <div class="theme-option" data-theme="ocean"></div>
+      <div class="theme-option" data-theme="forest"></div>
+      <div class="theme-option" data-theme="sunset"></div>
+      <div class="theme-option" data-theme="berry"></div>
+    </div>
+    <!-- Attribution -->
+    <div class="attribution">{ By: Yunus K. }</div>
+  </div>
+
+  <audio id="alarm-sound" src="./assets/alarm-tone.mp3" preload="auto"></audio>
+  
+  <script src="script.js"></script>
+</body>
+</html>
